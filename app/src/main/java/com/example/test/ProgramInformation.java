@@ -46,6 +46,7 @@ public class ProgramInformation extends AppCompatActivity {
         String appKey = sharedPreferences.getString("APPKEY", null);
         binding.firstName.setText(name);
         setContentView(binding.getRoot());
+        getSupportActionBar().hide();
         recyclerView = findViewById(R.id.programExerciseRecView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         programRepo.getProgram(((WebService)getApplication()).getSrv(), getProgramHandler, appKey);

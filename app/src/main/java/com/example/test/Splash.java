@@ -21,7 +21,7 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = SplashBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        getSupportActionBar().hide();
 
         SharedPreferences sharedPreferences = getSharedPreferences("GymDuo", Context.MODE_PRIVATE);
         String appKey = sharedPreferences.getString("APPKEY", null);

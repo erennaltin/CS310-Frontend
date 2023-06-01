@@ -6,11 +6,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -38,6 +41,10 @@ public class ProgramExerciseAdaptor extends RecyclerView.Adapter<ProgramExercise
         holder.exerciseName.setText(data.get(position).name);
         holder.repAmount.setText(Integer.toString(data.get(position).repAmount));
         holder.setAmount.setText(Integer.toString(data.get(position).setAmount));
+
+        Picasso.get()
+                .load(data.get(position).photoURL)
+                .into(holder.exerciseImage);
     }
 
     @Override
@@ -59,6 +66,7 @@ public class ProgramExerciseAdaptor extends RecyclerView.Adapter<ProgramExercise
         TextView exerciseName;
         TextView repAmount;
         TextView setAmount;
+        ImageView exerciseImage;
 
         public ListHolder(@NonNull View itemView){
             super(itemView);
@@ -66,6 +74,7 @@ public class ProgramExerciseAdaptor extends RecyclerView.Adapter<ProgramExercise
             exerciseName = itemView.findViewById(R.id.exerciseName);
             repAmount = itemView.findViewById(R.id.repAmount);
             setAmount = itemView.findViewById(R.id.setAmount);
+            exerciseImage = itemView.findViewById(R.id.exerciseImage);
         }
 
     }
