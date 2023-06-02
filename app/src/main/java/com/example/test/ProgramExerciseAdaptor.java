@@ -39,8 +39,8 @@ public class ProgramExerciseAdaptor extends RecyclerView.Adapter<ProgramExercise
     @Override
     public void onBindViewHolder(@NonNull ListHolder holder, int position) {
         holder.exerciseName.setText(data.get(position).name);
-        holder.repAmount.setText(Integer.toString(data.get(position).repAmount));
-        holder.setAmount.setText(Integer.toString(data.get(position).setAmount));
+        holder.repAmount.setText("Repeat per set: " + Integer.toString(data.get(position).repAmount));
+        holder.setAmount.setText("Set Amount: " + Integer.toString(data.get(position).setAmount));
 
         Picasso.get()
                 .load(data.get(position).photoURL)

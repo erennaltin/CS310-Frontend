@@ -1,6 +1,7 @@
 package com.example.test;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -50,7 +51,10 @@ public class ProgramInformation extends AppCompatActivity {
         recyclerView = findViewById(R.id.programExerciseRecView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         programRepo.getProgram(((WebService)getApplication()).getSrv(), getProgramHandler, appKey);
-
+        binding.forumButton.setOnClickListener(v -> {
+            Intent i = new Intent(this, ForumTopicsActivity.class);
+            startActivity(i);
+        });
 
         ;
     }

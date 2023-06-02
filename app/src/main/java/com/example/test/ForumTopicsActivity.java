@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,11 +43,25 @@ public class ForumTopicsActivity extends AppCompatActivity {
 
         recView = findViewById(R.id.recView);
         recView.setLayoutManager(new LinearLayoutManager(this));
-        getSupportActionBar().hide();
+        getSupportActionBar().setTitle("GymDuo. Forum");
         ExecutorService srv = ((WebService)getApplication()).srv;
 
         ForumTopicRepository repo = new ForumTopicRepository();
         repo.getTopic(srv,handler);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            // Handle the back button click
+            onBackPressed();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

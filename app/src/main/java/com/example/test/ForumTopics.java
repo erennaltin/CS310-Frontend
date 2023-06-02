@@ -1,10 +1,14 @@
 package com.example.test;
 
+import java.util.List;
+
 public class ForumTopics {
 
     public String name;
+    public String description;
+    List<Comment> comments;
 
-    ForumTopics(){}
+    public ForumTopics(){}
 
     public ForumTopics(String name) {
         this.name = name;

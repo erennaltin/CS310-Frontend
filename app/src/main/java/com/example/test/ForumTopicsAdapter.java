@@ -30,7 +30,7 @@ public class ForumTopicsAdapter extends RecyclerView.Adapter<ForumTopicsAdapter.
         View root = LayoutInflater.from(ctx).inflate(R.layout.forum_topic_row,parent,false);
         ForumTopicHolder holder = new ForumTopicHolder(root);
 
-        //holder.itemView.setOnClickListener(v -> {this.onClick(root);});
+        holder.itemView.setOnClickListener(v -> {this.onClick(root);});
 
         return holder;
     }
@@ -60,8 +60,10 @@ public class ForumTopicsAdapter extends RecyclerView.Adapter<ForumTopicsAdapter.
         ForumTopics selectedItem = data.get(position);
         Context context = root.getContext();
         Intent intent = new Intent(context, ForumTopicDetail.class);
-        //intent.putExtra("exerciseId", selectedItem.exerciseId);
+        intent.putExtra("topicName", selectedItem.name);
         context.startActivity(intent);
+
+
     }
 
 

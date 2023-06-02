@@ -18,7 +18,7 @@
 
     <TextView
         android:id="@+id/setAmount"
-        android:layout_width="66dp"
+        android:layout_width="wrap_content"
         android:layout_height="17dp"
         android:text="setAmount"
         app:layout_constraintStart_toStartOf="@+id/exerciseName"
