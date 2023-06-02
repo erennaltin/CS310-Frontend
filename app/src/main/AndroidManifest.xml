@@ -31,6 +31,12 @@
         </activity>
 
         <activity
+            android:name=".ForumTopicsActivity"
+            android:exported="true">
+
+        </activity>
+
+        <activity
             android:name=".Splash"
             android:exported="true">
             <intent-filter>
