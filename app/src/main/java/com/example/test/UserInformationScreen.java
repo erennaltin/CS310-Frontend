@@ -50,7 +50,7 @@ public class UserInformationScreen extends AppCompatActivity {
             if (response.returnCode == 200)
             {
                 Intent i = new Intent(UserInformationScreen.this, ProgramInformation.class);
-
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);
             }
 
@@ -66,7 +66,7 @@ public class UserInformationScreen extends AppCompatActivity {
         setContentView(R.layout.user_information_screen);
         UUID uuid = UUID.randomUUID();
         String appKey = uuid.toString();
-
+        getSupportActionBar().hide();
         ExperienceLevel[] items = {ExperienceLevel.BEGINNER, ExperienceLevel.AMATEUR, ExperienceLevel.INTERMEDIATE, ExperienceLevel.PROFESSIONAL};
         Spinner experienceLevelInput = findViewById(R.id.experience_level_input);
 

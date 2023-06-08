@@ -33,11 +33,13 @@ public class Splash extends AppCompatActivity {
                 if (appKey == null)
                 {
                     Intent i = new Intent(Splash.this, UserInformationScreen.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(i);
                 }
                 else
                 {
                     Intent i = new Intent(Splash.this, ProgramInformation.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(i);
                 }
             }
